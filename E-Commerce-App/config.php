@@ -57,7 +57,17 @@ try {
     $checkAdmin->execute();
     if ($checkAdmin->rowCount() == 0) {
         $conn->exec("INSERT INTO users (user_name, email, password, role)
-                     VALUES ('Admin', 'admin@gmail.com', '742100', 'admin')");
+                     VALUES ('Admin', 'admin@gmail.com', '12345678', 'admin')");
+    }
+
+    // Default user user
+    $checkEmployee = $conn->prepare("SELECT * FROM users WHERE email = :email");
+    $employeeEmail = 'employee@gmail.com';
+    $checkEmployee->bindParam(':email', $employeeEmail);
+    $checkEmployee->execute();
+    if ($checkEmployee->rowCount() == 0) {
+        $conn->exec("INSERT INTO users (user_name, email, password, role)
+                     VALUES ('Employee', 'employee@gmail.com', '12345678', 'employee')");
     }
 } catch (PDOException $e) {
     die("Database Error: " . $e->getMessage());

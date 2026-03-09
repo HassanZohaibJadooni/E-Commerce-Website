@@ -175,6 +175,28 @@ Database
 
 ---
 
+# Default Login Credentials
+
+## Admin Login
+
+Email
+[admin@gmail.com](mailto:admin@gmail.com)
+
+Password
+12345678
+
+---
+
+## Employee Login
+
+Email
+[employee@gmail.com](mailto:employee@gmail.com)
+
+Password
+12345678
+
+---
+
 # Screenshots
 
 ### Login Page
